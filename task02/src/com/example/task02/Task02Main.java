@@ -9,5 +9,23 @@ public class Task02Main {
         // - направить стандартный вывод программы в файл output.test
         // - запустить программу
         // - и сравнить получившийся файл output.test с expected.test
+        ConvertToUnix();
+    }
+
+    public static void ConvertToUnix() throws IOException {
+
+        int currentString = System.in.read();
+        int nextString;
+
+        while (currentString != -1) {
+            nextString = System.in.read();
+
+            if (currentString != 13 || nextString != 10)
+                System.out.write(currentString);
+
+            currentString = nextString;
+        }
+
+        System.out.flush();
     }
 }
